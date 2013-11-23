@@ -1,0 +1,8 @@
+{{extend 'layout.html'}}
+{{print get_id()}}
+{{if get_user!='None':}}
+{{redirect(URL('profile', args=[get_id()]))}}
+{{pass}}
+<h1>
+    World's Best Blog
+</h1>

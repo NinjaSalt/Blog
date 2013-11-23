@@ -1,0 +1,22 @@
+{{extend 'layout.html'}}
+<h1>{{=profile.username}} {{=A('Post', _href = URL('default', 'create_post'), _class='btn')}}</h1>
+
+<div>
+    {{=profile.About_Me}}
+</div>
+<br>
+
+
+{{posts = db(db.post.author==profile.username).select(db.post.ALL, orderby=~db.post.id)}}
+{{for post in posts:}}
+<div style="width: 95%;float:left;background:#B9CDF0;border: thick solid  #1B4388;border-radius:25px; padding-left:20px; padding-right:20px; margin: 10px;">
+    <h3>
+        {{=post.title}} ({{=post.post_date}})
+    </h3>
+    <p>
+        {{=post.post_content}}
+    </p>
+</div>
+
+
+ {{pass}}
