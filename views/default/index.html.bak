@@ -6,3 +6,4 @@
 <h1>
     World's Best Blog
 </h1>
+{{=A('Start Posting!', _href = URL('default', 'create_post'), _class='btn')}}

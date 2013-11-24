@@ -82,5 +82,5 @@ def create_post():
     return dict(form=form)
 
 def profile():
-    profile = db.auth_user(request.args(0,cast=str)) or redirect(URL('index'))
+    profile = db.auth_user(request.args(0,cast=int)) or redirect(URL('index'))
     return dict(profile=profile)
